@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS优先级</title>
+    <style>
+        /* 选择器权重：继承或* < 元素选择器(div) < 类选择器/伪类选择器
+         < id选择器 < 行内样式(style="") < !important */
+        /* 权重依次为0,0,0,0 < 0,0,0,1 < 0,0,1,0 < 0,1,0,0 < 1,0,0,0 < 无穷大 */
+        /* 权重以四组为一个单位，每一组数字依次相比较，出现较大的数字则优先级大 */
+        .test {
+            color: skyblue;
+        }
+
+        div {
+            color: pink !important;
+        }
+
+        #demo {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test" id="demo" style="color: green;">你笑起来真好看</div>
+</body>
+
+</html>

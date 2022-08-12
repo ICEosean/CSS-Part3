@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行高的继承</title>
+    <style>
+        body {
+            color: skyblue;
+            /* font: 12px/24px 'microsofy yahei' */
+            font: 12px/1.5 'microsofy yahei'
+        }
+
+        div {
+            /* 子元素继承了父元素body的行高1.5 */
+            /* 这个1.5，就是当前元素字体大小font-size的1.5倍 所以当前div的行高就是14*1.5=21像素 */
+            font-size: 14px;
+        }
+
+        p {
+            /* 1.5*16=24 既当前的行高 */
+            font-size: 16px;
+        }
+
+        /* li的文字大小继承了body的文字大小，行高1.5*12=18px */
+    </style>
+</head>
+
+<body>
+    <div>哒哒哒哒哒</div>
+    <p>哒哒哒哒哒</p>
+    <ul>
+        <li>我没有指定文字大小</li>
+    </ul>
+</body>
+
+</html>
+
+<!-- body行高1.5这样写法最大的优势就是子元素可以根据自己文字大小自动调整行高 -->
